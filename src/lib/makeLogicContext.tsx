@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export function makeBLContext<LogicFacade, LogicProps>({
+export function makeLogicContext<LogicFacade, LogicProps>({
   useLogic,
   displayName
 }: {
@@ -23,7 +23,7 @@ export function makeBLContext<LogicFacade, LogicProps>({
     },
     LogicContextProvider: ContainerContextProvider,
     connect: function <Props, OwnProps = unknown>(
-      Component: React.ComponentType<Props>,
+      Component: React.FunctionComponent<Props>,
       contextToProps: (logicProps: LogicFacade, ownProps?: OwnProps) => Props,
     ) {
       return connectHooks(Component, (ownProps) => {
@@ -35,7 +35,7 @@ export function makeBLContext<LogicFacade, LogicProps>({
 }
 
 export const connectHooks = function<Props, OwnProps = unknown>(
-  Component: React.ComponentType<Props>,
+  Component: React.FunctionComponent<Props>,
   useHooks: (ownProps?: OwnProps) => Props,
   displayName?: string,
 ) {
