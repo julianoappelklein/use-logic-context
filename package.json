@@ -4,17 +4,18 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently \"esbuild ./src/index.jsx --bundle --minify --sourcemap --watch  --outfile=./dist/index.js\" \"live-server ./dist\"",
-    "build": "esbuild ./src/index.jsx --bundle --minify --outfile=./dist/index.js",
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "snowpack": "snowpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
-    "esbuild": "0.14.36",
-    "react": "^18.0.0",
+    "@snowpack/plugin-webpack": "3.0.0",
+    "@types/react": "17.0.38",
+    "@types/react-dom": "17.0.11",
+    "react": "18.0.0",
     "react-dom": "18.0.0",
-    "live-server": "1.2.1",
-    "concurrently": "7.1.0"
-  }
+    "snowpack": "3.8.8"
+  },
+  "browserslist": ">0.75%, not ie 11, not UCAndroid >0, not OperaMini all"
 }

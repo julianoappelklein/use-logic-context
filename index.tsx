@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { App } from "./App";
-import { WishlistLogicContextProvider } from "./useWishlistLogic";
+import { App } from "./src/App";
+import { WishlistLogicContextProvider } from "./src/useWishlistLogic";
 
 
 ReactDOM.render(
